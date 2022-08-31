@@ -1,0 +1,37 @@
+[
+    {
+        "name": "test",
+        "login": "testtest",
+        "email": "tessadt2@test2.by",
+        "password": "b50d9e53e6faa71c66f7a9046d38ebf3",
+        "salt": "=j&GPeFg"
+    },
+    {
+        "name": "\u041c\u0430\u043a\u0441\u0438\u043c",
+        "login": "testlogin",
+        "email": "test@gmail.com",
+        "password": "f5944a7d1a00c4f704d4f4b0328d002b",
+        "salt": "<)n|i,'h"
+    },
+    {
+        "name": "\u041c\u0430\u043a\u0441\u0438\u043c",
+        "login": "testlogin1",
+        "email": "test1@gmail.com",
+        "password": "916a6cfca1572f30689144bfdc37390e",
+        "salt": "5bemPI(R"
+    },
+    {
+        "name": "test",
+        "login": "testlogin2",
+        "email": "test2@gmail.com",
+        "password": "f448c93a5694f25b782ba2b9e97f3d49",
+        "salt": "u\"k\">PyN"
+    },
+    {
+        "name": "test",
+        "login": "test3test3",
+        "email": "test3@gmail.com",
+        "password": "ee277ae95e9aeed2806dcc16931c85f0",
+        "salt": "ojsQqkq0"
+    }
+]

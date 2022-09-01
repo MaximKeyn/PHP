@@ -37,7 +37,8 @@ if (!isset($password_confirm) || empty($password_confirm)) {
 
 
 //Подключаем БД
-$data = getDBarray();
+$db = new Json(); 
+$data = $db->getRows(); 
 
 // Проверяем существет ли логин или почта
 if(!empty($data)&&!empty($login)&&!empty($email))

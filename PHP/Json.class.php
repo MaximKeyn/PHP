@@ -2,6 +2,15 @@
 class Json{ 
     private $jsonFile = "database/db.json"; 
      
+    public function getRows(){ 
+        if(file_exists($this->jsonFile)){ 
+            $jsonData = file_get_contents($this->jsonFile); 
+            $data = json_decode($jsonData, true); 
+             
+            return !empty($data)?$data:false; 
+        } 
+        return false; 
+    } 
      
     public function getSingle($id){ 
         $jsonData = file_get_contents($this->jsonFile); 

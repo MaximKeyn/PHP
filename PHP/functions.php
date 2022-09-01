@@ -1,12 +1,4 @@
 <?php
-
-//Получаем список пользователей из БД
-    function getDBarray(){
-        $data = file_get_contents('database/db.json');
-        $data = json_decode($data,TRUE);
-        return $data;
-    }
-
 //Генерируем соль для пароля
     function generateSalt()
     {

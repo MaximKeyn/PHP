@@ -1,16 +1,17 @@
 <?php
 session_start();
 require "functions.php";
+require_once 'Json.class.php'; 
 
 if (isset($_POST["login"]) && isset($_POST["password"]) ) {
+  $db = new Json(); 
+  $members = $db->getRows(); 
 
   $login = $_POST['login'];
   $password = $_POST['password'];
 
-  $data = getDBarray();
-
   // Проверяем логин и пароль в БД
-  foreach ($data as $key => $value) {
+  foreach ($members as $key => $value) {
     if ($value['login'] === $login) {
     $salt = $value['salt']; 
 		$hash = $value['password'];

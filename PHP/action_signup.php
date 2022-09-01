@@ -1,6 +1,8 @@
 <?php
 session_start();
 require "functions.php";
+require_once 'Json.class.php'; 
+$db = new Json(); 
 
 $login = $_POST['login'];  
 $password = $_POST['password']; 
@@ -54,7 +56,16 @@ if(!empty($data)&&!empty($login)&&!empty($email))
 
 //Если нет ошибок, довавляем пользователя в БД
 if($name_error == ' ' && $login_error == ' ' && $email_error == ' ' && $password_error == ' ' && $password_confirm_error == ' '){
-  addUser($password, $name, $login, $email, $data);
+  $salt = generateSalt();
+  $hashpassword = md5($salt . $password);
+  $userData = array( 
+    'name' => $name, 
+    'email' => $email, 
+    'login' => $login, 
+    'password' => $hashpassword ,
+    'salt' => $salt
+); 
+  $insert = $db->insert($userData); 
   $result = 'Пользователь был успешно добавлен';
   $errors = ['name' => $name_error,
   'login' => $login_error , 

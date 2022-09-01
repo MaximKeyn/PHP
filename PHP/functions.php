@@ -7,25 +7,6 @@
         return $data;
     }
 
-//Добавляем пользователя в БД
-    function addUser($password, $name, $login, $email, $data){
-
-        $salt = generateSalt();
-        $hashpassword = md5($salt . $password);
-
-        $add_arr = array(
-            'name' => $name,
-            'login' => $login,
-            'email' => $email,
-            'password' => $hashpassword,
-            'salt' => $salt
-            );
-        $data[] = $add_arr;
-        
-        $data = json_encode($data, JSON_PRETTY_PRINT);
-        file_put_contents('database/db.json', $data);
-    }
-
 //Генерируем соль для пароля
     function generateSalt()
     {
